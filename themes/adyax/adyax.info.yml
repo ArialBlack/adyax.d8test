@@ -1,0 +1,8 @@
+name: adyax
+type: theme
+description: Theme that uses the css3 display flexible box model.
+package: Other
+core: 8.x
+libraries:
+  - adyax/global-css
+  - adyax/global-js

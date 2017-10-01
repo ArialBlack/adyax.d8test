@@ -1,0 +1,483 @@
+input,
+textarea {
+  max-width: 100%;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"] {
+  height: 50px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+textarea {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  padding: .5rem .75rem;
+  line-height: 1.25;
+  color: $label;
+  background-color: $adjax-page-white;
+  background-image: none;
+  background-clip: padding-box;
+  border: 1px solid $border-color;
+  border-radius: 2px;
+  border-radius: .125rem;
+  touch-action: manipulation;
+
+  &:focus {
+    border-color: $adyax-yellow;
+    outline: none !important;
+  }
+
+  &.error {
+    color: $adyax-red;
+    border-color: $adyax-red;
+  }
+}
+
+label {
+  @include font-size(14);
+  display: block;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: $label;
+  margin-bottom: 22px;
+  font-weight: 500;
+
+  &.error {
+    color: $adyax-red;
+    letter-spacing: normal;
+    text-transform: none;
+  }
+}
+
+.form-checkbox + label,
+.form-radio + label {
+  margin-bottom: 0;
+}
+
+.form-item {
+  margin-bottom: $gutter * 2;
+}
+
+.webform-document-file {
+  .description {
+    display: none;
+  }
+}
+
+.form-item.js-form-type-checkbox,
+.form-item.js-form-type-radio {
+  display: table;
+  height: 40px;
+}
+
+// Checkboxes & radio
+.form-checkbox,
+.form-radio {
+  position: absolute;
+  z-index: -1000;
+  left: -1000px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.form-checkbox + label,
+.form-radio + label {
+  padding-left: 67px;
+  cursor: pointer;
+  min-height: 40px;
+  line-height: 1;
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  &:before {
+    content: '';
+    border: 1px solid $border-color;
+    padding: 19px;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
+.form-checkbox:checked + label,
+.form-radio:checked + label {
+  background-position: 0 -30px;
+}
+
+.form-checkbox:checked + label,
+.form-radio:checked + label {
+  &:after {
+    content: '';
+    position: absolute;
+  }
+}
+
+//Checkboxes only
+.form-checkbox + label {
+  &:before {
+    border-radius: 2px;
+  }
+}
+
+.form-checkbox:checked + label {
+  &:after {
+    top: 10px;
+    left: 16px;
+    width: 6px;
+    height: 16px;
+    transform: rotate(45deg);
+    border: solid #090909;
+    border-width: 0 2px 2px 0;
+  }
+}
+
+//Radio only
+.form-radio + label {
+  &:before {
+    border-radius: 100%;
+  }
+}
+
+.form-radio:checked + label {
+  &:after {
+    top: 13px;
+    left: 13px;
+    background: #6f6f6f;
+    border-radius: 100%;
+    border: 1px solid #535353;
+    width: 13px;
+    height: 13px;
+  }
+}
+
+//Input file
+
+/*
+input[type="file"] + label {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.js input[type="file"] {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.no-js input[type="file"] + label {
+  display: none;
+}
+
+input[type="file"]:focus + label,
+input[type="file"].has-focus + label {
+  outline: 1px dotted #000;
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+*/
+
+//Form specific
+.webform-submission-adyax_test_form-form {
+  padding-top: 75px;
+  border-top: $border-color 1px solid;
+
+  @media screen and (min-width: $md) {
+    #edit-left,
+    #edit-right {
+      width: 50%;
+      padding-right: 25px;
+      float: left;
+      box-sizing: border-box;
+      display: inline-block;
+    }
+
+    #edit-right-block {
+      padding-right: 0;
+      padding-left: 25px;
+    }
+  }
+
+  @media screen and (min-width: $lg) {
+    max-width: 750px;
+  }
+
+  @media screen and (min-width: $xl) {
+    max-width: 948px;
+  }
+
+  div[role=alert] {
+    @include font-size(12);
+    color: $adyax-red;
+  }
+
+  #edit-left,
+  #edit-right {
+    legend {
+      display: none;
+    }
+  }
+
+  #edit-message {
+    min-height: 172px;
+  }
+
+  #edit-graduated-html {
+    clear: both;
+    font-weight: 500;
+    margin-bottom: 15px;
+
+    a {
+      text-decoration: none;
+      color: $label;
+      border-bottom: 1px solid $adyax-yellow;
+      padding-bottom: 5px;
+      font-weight: 400;
+      transition: all 0.3s linear;
+
+      &:hover {
+        border-color: $adyax-red;
+      }
+    }
+  }
+
+  #edit-graduated-from-htmlacademy-ru---wrapper {
+    .form-item {
+      float: left;
+      margin-right: 45px;
+
+      label {
+        @include font-size(14);
+        font-weight: 600;
+        line-height: 1.21;
+        letter-spacing: 1.4px;
+      }
+    }
+  }
+
+  .js-form-type-webform-document-file {
+    div[role=alert] {
+      display: none;
+    }
+
+    .form-managed-file {
+      width: 100%;
+      padding: 8px 12px;
+      padding: .5rem .75rem;
+      border: 1px solid $border-color;
+      border-radius: .25rem;
+      height: 50px;
+
+      div[role=contentinfo] {
+        display: none;
+      }
+
+      .form-file,
+      span {
+        @include font-size(14);
+        max-width: 280px;
+        margin-top: 6px;
+      }
+    }
+
+    .form-submit {
+      @include font-size(13);
+      background: $adyax-yellow;
+      border-radius: 2px;
+      color: white;
+      text-transform: uppercase;
+      font-weight: 500;
+      line-height: 1.42;
+      letter-spacing: 1.2px;
+      border: none;
+      padding: 8px 16px;
+      float: right;
+      display: inline-block !important;
+    }
+  }
+
+  .fieldgroup {
+    legend {
+      @include font-size(12);
+      font-weight: 300;
+      line-height: 2.08;
+      color: #979797;
+      margin-bottom: 33px;
+    }
+  }
+
+  #edit-please-mark-skills-you-are-best-in-and-types-of-tasks-you-are-g {
+    @media screen and (min-width: $md) {
+      -moz-column-count: 2;
+      -moz-columns: 2;
+      -webkit-columns: 2;
+      columns: 2;
+    }
+
+    label {
+      @include font-size(16);
+      font-weight: 600;
+      color: $label;
+      letter-spacing: normal;
+      text-transform: none;
+    }
+  }
+
+  #edit-actions {
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  .webform-button--submit {
+    @include font-size(12);
+    width: 200px;
+    height: 60px;
+    background: $adjax-page-white url('../img/submit-button.svg') no-repeat center center;
+    background-size: contain;
+    border: none;
+    box-shadow: 0px 14px 30px 0px rgba(216, 216, 216, 0.5);
+    -webkit-box-shadow: 0px 14px 30px 0px rgba(216, 216, 216, 0.5);
+    -moz-box-shadow: 0px 14px 30px 0px rgba(216, 216, 216, 0.5);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: 2.4px;
+    color: #191919;
+    text-transform: uppercase;
+    transition: all 0.3s linear;
+    padding: 0;
+
+    @media screen and (min-width: $sm) {
+      width: 276px;
+      height: 76px;
+    }
+
+    &:hover {
+      box-shadow: 0px 0px 30px 0px rgba(216, 216, 216, 0.7);
+      -webkit-box-shadow: 0px 0px 30px 0px rgba(216, 216, 216, 0.7);
+      -moz-box-shadow: 0px 0px 30px 0px rgba(216, 216, 216, 0.7);
+    }
+  }
+}
+
+.no-svg {
+  .webform-submission-adyax_test_form-form {
+    .webform-button--submit {
+      background: $adjax-page-white url('../img/submit-button.png') no-repeat center center;
+    }
+  }
+}
+
+.no-csscolumns {
+  .webform-submission-adyax_test_form-form {
+    #edit-please-mark-skills-you-are-best-in-and-types-of-tasks-you-are-g {
+      @media screen and (min-width: $md) {
+        width: 100%;
+
+        .form-item {
+          width: 50%;
+          float: left;
+        }
+      }
+    }
+  }
+}
+
+.no-boxshadow {
+  .webform-submission-adyax_test_form-form {
+    .webform-button--submit {
+      border: 1px solid $border-color;
+      transition: all 0.3s linear;
+
+      &:hover {
+        background: $adyax-yellow;
+        border-color: $adyax-yellow;
+        color: white;
+      }
+    }
+  }
+}
+
+.ie6,
+.ie7,
+.ie8 {
+  input[type="text"],
+  input[type="email"],
+  input[type="url"],
+  .js-form-type-webform-document-file .form-managed-file {
+    height: 34px;
+  }
+
+  .form-checkbox,
+  .form-radio {
+    display: inline-block;
+    position: static;
+    opacity: 1;
+    height: 20px;
+    width: 20px;
+
+    & + label {
+      padding: 0;
+      padding-left: 20px;
+      display: inline;
+
+      &:before {
+        border: none;
+      }
+    }
+  }
+
+  .webform-submission-adyax_test_form-form {
+    #edit-message {
+      min-height: 159px;
+    }
+  }
+}
+
+.ie6,
+.ie7 {
+  .webform-submission-adyax_test_form-form {
+    padding-top: 75px;
+    border-top: $border-color 1px solid;
+
+    @media screen and (min-width: $md) {
+      #edit-left-block,
+      #edit-right-block {
+        width: 45%;
+        padding-right: 5%;
+        float: left;
+        box-sizing: border-box;
+        display: inline-block;
+      }
+
+      #edit-right-block {
+        padding-right: 0;
+        padding-left: 5%;
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+/*
+X - equal to the letter-tracking value in Photoshop
+S - the font-size in pixels
+*/
+@mixin letter-spacing($x, $s) {
+  letter-spacing: $x * $s / 1000 * 1px;
+}
+
+@mixin font-size($mysizeValue) {
+  $sizeValue: $mysizeValue / $basefontsize;
+  $remValue: $sizeValue;
+  font-size: $mysizeValue * 1px;
+  font-size: $remValue * 1rem;
+}
+
+@mixin rft($mysizeValue-min, $mysizeValue-max) {
+
+  $delta: $mysizeValue-max - $mysizeValue-min;
+  $step: $delta / 3;
+
+  @include font-size($mysizeValue-min);
+
+  @media screen and (min-width: $sm) {
+    $fontsize: $mysizeValue-max - $step * 3;
+    @include font-size($fontsize);
+  }
+  @media screen and (min-width: $md) {
+    $fontsize: $mysizeValue-max - $step * 2;
+    @include font-size($fontsize);
+  }
+  @media screen and (min-width: $lg) {
+    $fontsize: $mysizeValue-max - $step;
+    @include font-size($fontsize);
+  }
+
+  @media screen and (min-width: $xl) {
+    @include font-size($mysizeValue-max);
+  }
+}

@@ -1,0 +1,5 @@
+# Schema for the configuration files of the Adyax theme.
+
+adyax.settings:
+  type: theme_settings
+  label: 'Adyax theme settings'

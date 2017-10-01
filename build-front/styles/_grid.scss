@@ -1,0 +1,46 @@
+@at-root {
+  @-ms-viewport { width: device-width; }
+}
+
+html {
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $gutter;
+  padding-left: $gutter;
+  width: 100%;
+}
+
+@media screen and (min-width: $sm) {
+  .container {
+    max-width: $sm-max-width;
+  }
+}
+
+@media screen and (min-width: $md) {
+  .container {
+    max-width: $md-max-width;
+  }
+}
+
+@media screen and (min-width: $lg) {
+  .container {
+    max-width: $lg-max-width;
+  }
+}
+
+@media screen and (min-width: $xl) {
+  .container {
+    max-width: $xl-max-width;
+  }
+}

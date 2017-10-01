@@ -1,0 +1,13 @@
+global-css:
+  css:
+    theme:
+      css/style.css: {}
+
+global-js:
+  js:
+    js/vendor/respond.min.js: {}
+    js/vendor/modernizr-2.8.3.min.js: {}
+    js/main.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery

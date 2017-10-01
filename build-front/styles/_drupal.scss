@@ -1,0 +1,31 @@
+#block-logoblock {
+  @extend .ma;
+  margin-top: 50px;
+  text-align: center;
+}
+
+#block-adyax-page-title,
+.paragraph--type--bold-title {
+  @extend .ma;
+  text-align: center;
+}
+
+.paragraph--type--bold-title {
+  @extend .jumbotron;
+
+  div {
+    @include rft(20,24);
+    font-weight: 600;
+    text-align: center;
+    color: #191919;
+    line-height: 1.2;
+
+    @media screen and (min-width: $md) {
+      line-height: 1.79;
+    }
+  }
+}
+
+#block-landingfooter {
+  @extend .img-container;
+}
