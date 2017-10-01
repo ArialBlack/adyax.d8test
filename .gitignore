@@ -219,7 +219,7 @@ pip-log.txt
 /sites/
 /profiles/
 /core/
-/modules/
+
 /.eslintignore
 /.editorconfig
 /.csslintrc
@@ -242,3 +242,12 @@ pip-log.txt
 .idea/
 /temp/
 /vendor/
+/modules/chosen/
+/modules/clientside_validation/
+/modules/admin_toolbar/
+/modules/entity_reference_revisions/
+/modules/entity/
+/modules/paragraphs/
+/modules/webform/
+/modules/README.txt
+/modules/devel/
